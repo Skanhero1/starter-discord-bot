@@ -108,6 +108,9 @@ app.get('/', async (req,res) =>{
 
 app.post('/post', (request, response) => {
     response.send("Gotten POST request")
+	discord_api.post(`/channels/${c.id}/messages`,{
+          content:'a',
+        })
     console.log(request.body)
 })
 
