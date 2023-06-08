@@ -119,7 +119,7 @@ app.post('/checkMember', async (req, res) => {
 	
 	try {
 		console.log(req.body)
-		response = await discord_api.get(`/guilds/${GUILD_ID}/members/${req.body.userid}`)
+		response = await discord_api.get(`/guilds/${GUILD_ID}/members/${req.body}`)
 		return res.send(response.data.user)
 	} catch(e) {
 		console.log(e)
