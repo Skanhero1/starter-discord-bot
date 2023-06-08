@@ -125,7 +125,7 @@ app.post('/checkMember', async (req, res) => {
 	}	
 })
 
-app.post('/getMembers', async (req, res) => {
+app.get('/getMembers', async (req, res) => {
 let response = undefined
 	
 	try {
