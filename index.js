@@ -129,7 +129,8 @@ app.post('/checkMemberV2', async (req, res) => {
 	let response = undefined
 	
 	try {
-		 const { username, discriminator } = req.body
+		const requestBody = req.body;
+		const [username, discriminator] = requestBody.split(',');
 		 console.log(username)
 		response = await discord_api.get(`/users`, {
   params: {
