@@ -113,6 +113,13 @@ app.post('/post', async (request, response) => {
 	}
 })
 
+app.get('/get', async (req, res) => {
+	
+	const res = await discord_api.get(`/guilds/${GUILD_ID}/members/428595127079010304`)
+	
+return res.send(res)
+})
+
 app.listen(8999, () => {
 	
 })
