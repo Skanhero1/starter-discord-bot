@@ -102,7 +102,7 @@ app.get('/', async (req,res) =>{
 })
 
 app.post('/post', async (request, response) => {
-	console.log(request.data)
+	console.log(request.Payload)
 	const res = undefined
 	try {
 		res = await discord_api.post(`/channels/528723021670776832/messages`,{
