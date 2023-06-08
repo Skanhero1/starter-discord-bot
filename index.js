@@ -114,8 +114,6 @@ app.post('/post', async (request, response) => {
 })
 
 app.listen(8999, () => {
-	discord_api.post(`/channels/528723021670776832/messages`,{
-          content:'Yo! I got your slash command. I am not able to respond to DMs just slash commands.',
-        })
+	
 })
 
