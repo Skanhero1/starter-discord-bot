@@ -9,11 +9,12 @@ const GUILD_ID = process.env.GUILD_ID
 
 const axios = require('axios')
 const express = require('express');
+const bodyparser = require('body-parser')
 const { InteractionType, InteractionResponseType, verifyKeyMiddleware } = require('discord-interactions');
 
 
 const app = express();
-app.use(bodyParser.json());
+app.use(bodyparser.text());
 
 const discord_api = axios.create({
   baseURL: 'https://discord.com/api/',
