@@ -104,6 +104,7 @@ app.get('/', async (req,res) =>{
 app.post('/post', (request, response) => {
     response.send("Gotten POST request")
 	console.log(request.something)
+	return "aa"
 })
 
 app.listen(8999, () => {
