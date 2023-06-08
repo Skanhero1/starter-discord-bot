@@ -103,6 +103,7 @@ app.get('/', async (req,res) =>{
 
 app.post('/post', (request, response) => {
     response.send("Gotten POST request")
+	console.log(request)
 })
 
 app.listen(8999, () => {
