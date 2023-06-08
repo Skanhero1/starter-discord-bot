@@ -130,8 +130,8 @@ let response = undefined
 	
 	try {
 		response = await discord_api.get(`/guilds/${GUILD_ID}/members`)
-		console.log(response)
-		return res.send(response)
+		console.log(response.data)
+		return res.send(response.data)
 	} catch(e) {
 		console.log(e)
 	}	
