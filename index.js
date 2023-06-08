@@ -129,7 +129,8 @@ app.post('/checkMemberV2', async (req, res) => {
 	let response = undefined
 	
 	try {
-		console.log(req.body)
+		 const { username, discriminator } = req.body
+		 console.log(username)
 		response = await discord_api.get(`/users`, {
   params: {
     username: req.body.username,
