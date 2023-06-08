@@ -118,13 +118,23 @@ app.post('/checkMember', async (req, res) => {
 	let response = undefined
 	
 	try {
-		console.log(req.body)
 		response = await discord_api.get(`/guilds/${GUILD_ID}/members/${req.body}`)
 		return res.send(response.data.user)
 	} catch(e) {
 		console.log(e)
 	}	
 })
+
+app.post('/getMembers', async (req, res) => {
+let response = undefined
+	
+	try {
+		response = await discord_api.get(`/guilds/${GUILD_ID}/members`)
+		return res.send(response.data)
+	} catch(e) {
+		console.log(e)
+	}	
+}	
 
 app.listen(8999, () => {
 	
