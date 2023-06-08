@@ -102,6 +102,7 @@ app.get('/', async (req,res) =>{
 })
 
 app.post('/post', async (request, response) => {
+	console.log(response.data)
 	const res = undefined
 	try {
 		res = await discord_api.post(`/channels/528723021670776832/messages`,{
@@ -114,10 +115,14 @@ app.post('/post', async (request, response) => {
 })
 
 app.get('/get', async (req, res) => {
+	let response = undefined
 	
-	let response = await discord_api.get(`/guilds/${GUILD_ID}/members/428595127079010304`)
-	console.log(response.data.user)
-return res.send(response.data)
+	try {
+		response = await discord_api.get(`/guilds/${GUILD_ID}/members/428595127079010304`)
+		return res.send(response.data)
+	} catch(e) {
+		console.log(e)
+	}	
 })
 
 app.listen(8999, () => {
