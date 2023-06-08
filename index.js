@@ -134,7 +134,7 @@ let response = undefined
 	} catch(e) {
 		console.log(e)
 	}	
-}	
+})	
 
 app.listen(8999, () => {
 	
