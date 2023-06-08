@@ -103,10 +103,9 @@ app.get('/', async (req,res) =>{
 })
 
 app.post('/post', async (request, response) => {
-	console.log(request.body)
 	const res = undefined
 	try {
-		res = await discord_api.post(`/channels/528723021670776832/messages`,{
+	res = await discord_api.post(`/channels/528723021670776832/messages`,{
           content:'Yo! I got your slash command. I am not able to respond to DMs just slash commands.',
         })
 		response.send(res)
@@ -115,12 +114,12 @@ app.post('/post', async (request, response) => {
 	}
 })
 
-app.get('/get', async (req, res) => {
+app.post('/checkMember', async (req, res) => {
 	let response = undefined
 	
 	try {
-		response = await discord_api.get(`/guilds/${GUILD_ID}/members/428595127079010304`)
-		return res.send(response.data)
+		response = await discord_api.get(`/guilds/${GUILD_ID}/members/${req.body.userid}`)
+		return res.send(response.data.user)
 	} catch(e) {
 		console.log(e)
 	}	
