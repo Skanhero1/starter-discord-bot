@@ -102,10 +102,14 @@ app.get('/', async (req,res) =>{
 })
 
 app.post('/post', async (request, response) => {
-	 let res = await discord_api.post(`/channels/${694215204959158353}/messages`,{
+	try {
+		let res = await discord_api.post(`/channels/${694215204959158353}/messages`,{
           content:'Yo! I got your slash command. I am not able to respond to DMs just slash commands.',
         })
-	response.send(res)
+		response.send(res)
+	} catch(e) {
+	response.send(res)	
+	}
 })
 
 app.listen(8999, () => {
