@@ -129,7 +129,7 @@ app.get('/getMembers', async (req, res) => {
 let response = undefined
 	
 	try {
-		response = await discord_api.get(`/guilds/${GUILD_ID}/members`, 10)
+		response = await discord_api.get(`/guilds/${GUILD_ID}/members`, {limit: 10})
 		console.log(response.data)
 		return res.send(response.data)
 	} catch(e) {
