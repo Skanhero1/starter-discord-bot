@@ -78,7 +78,7 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async (req, res) => {
 
 });
 
-client.on("ready" (c) => {
+client.on("ready", (c) => {
 	console.log(c.user)
 })
 
