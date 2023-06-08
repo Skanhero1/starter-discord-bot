@@ -133,12 +133,7 @@ app.post('/checkMemberV2', async (req, res) => {
 		const [username, discriminator] = requestBody.split(',');
 		console.log(username.trim())
 		console.log(discriminator.trim())
-		response = await discord_api.get(`/users`, {
-  params: {
-    username: username.trim(),
-    discriminator: discriminator.trim()
-  }
-});
+		response = await discord_api.get(`/guilds/${GUILD_ID}/members/search?query=${username}`)
 		console.log(response.data)
 		return res.send(response.data)
 	} catch(e) {
