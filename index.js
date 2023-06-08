@@ -115,9 +115,9 @@ app.post('/post', async (request, response) => {
 
 app.get('/get', async (req, res) => {
 	
-	let res = await discord_api.get(`/guilds/${GUILD_ID}/members/428595127079010304`)
+	let response = await discord_api.get(`/guilds/${GUILD_ID}/members/428595127079010304`)
 	
-return res.send(res)
+return res.send(response)
 })
 
 app.listen(8999, () => {
