@@ -125,6 +125,24 @@ app.post('/checkMember', async (req, res) => {
 	}	
 })
 
+app.post('/checkMemberV2', async (req, res) => {
+	let response = undefined
+	
+	try {
+		console.log(req.body)
+		response = await discord_api.get(`/users`, {
+  params: {
+    username: req.body.username,
+    discriminator: req.body.discriminator
+  }
+});
+		console.log(response.data)
+		return res.send(response.data)
+	} catch(e) {
+		console.log(e)
+	}	
+})
+
 app.get('/getMembers', async (req, res) => {
 let response = undefined
 	
