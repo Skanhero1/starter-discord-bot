@@ -130,6 +130,7 @@ let response = undefined
 	
 	try {
 		response = await discord_api.get(`/guilds/${GUILD_ID}/members`)
+		console.log(response)
 		return res.send(response)
 	} catch(e) {
 		console.log(e)
