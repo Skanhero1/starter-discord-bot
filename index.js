@@ -26,17 +26,6 @@ const discord_api = axios.create({
   }
 });
 
-const { Client, IntentsBitField } = require("discord.js");
-
-const client = new Client({
-    intents: [
-        IntentsBitField.Flags.Guilds,
-        IntentsBitField.Flags.GuildMembers,
-        IntentsBitField.Flags.GuildMessages,
-        IntentsBitField.Flags.MessageContent
-    ]
-});
-
 app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async (req, res) => {
   const interaction = req.body;
 
@@ -77,12 +66,6 @@ app.post('/interactions', verifyKeyMiddleware(PUBLIC_KEY), async (req, res) => {
   }
 
 });
-
-client.on("ready", (c) => {
-	console.log(c.user)
-})
-
-client.login(TOKEN)
 
 app.get('/register_commands', async (req,res) =>{
   let slash_commands = [
