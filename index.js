@@ -108,12 +108,12 @@ app.get('/', async (req,res) =>{
 
 app.post('/post', (request, response) => {
     response.send("Gotten POST request")
-    console.log(request.body)
+   discord_api.post(`/users/@me/channels`,{
+        recipient_id: 428595127079010304
+      })
 })
 
 app.listen(8999, () => {
-	discord_api.post(`/users/@me/channels`,{
-        recipient_id: 428595127079010304
-      })
+	
 })
 
